@@ -1,0 +1,36 @@
+﻿<Window x:Class="WpfScheduler.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
+        xmlns:local="clr-namespace:WpfScheduler"
+        xmlns:interactivity="http://schemas.microsoft.com/xaml/behaviors"
+        WindowStartupLocation="CenterScreen" >
+
+<Window.Resources>
+    <Style TargetType="syncfusion:MonthCell">
+        <Style.Triggers>
+            <Trigger Property="DayType" Value="BlackOutDay, NormalDay">
+                <Setter Property="Foreground" Value="Black"/>
+                <Setter Property="Background" Value="LawnGreen"/>
+            </Trigger>
+            <Trigger Property="DayType" Value="BlackoutDay,LeadingDay">
+                <Setter Property="Foreground" Value="DarkViolet"/>
+                <Setter Property="Background" Value="Aqua"/>
+            </Trigger>
+            <Trigger Property="DayType" Value="BlackoutDay,TrailingDay">
+                <Setter Property="Foreground" Value="Red"/>
+                <Setter Property="Background" Value="Yellow"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+</Window.Resources>
+<Grid>
+    <syncfusion:SfScheduler 
+        x:Name="Schedule" 
+        ViewType="Month" >
+        <interactivity:Interaction.Behaviors>
+            <local:SchedulerBehavior/>
+        </interactivity:Interaction.Behaviors>
+    </syncfusion:SfScheduler>
+</Grid>
+</Window>
