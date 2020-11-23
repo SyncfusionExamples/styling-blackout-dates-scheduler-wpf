@@ -1,2 +1,1 @@
-# styling-blackout-dates-scheduler-wpf
-How to style the blackout dates in WPF Schedule (SfScheduler)
+**[View document in Syncfusion WPF Knowledge base](https://www.syncfusion.com/kb/12102/how-to-style-the-blackout-dates-in-wpf-schedule-sfscheduler)**
